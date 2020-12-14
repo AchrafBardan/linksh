@@ -5,8 +5,8 @@
     "display": "fullscreen",
     "scope": "/",
     "start_url": "/",
-    "app_name": "Bardan",
-    "short_name": "Bardan - Link shortener",
+    "app_name": "Bardan - Link shortener",
+    "short_name": "Bardan",
     "description": "Shorten all your urls",
     "icons": [{
             "src": "/icon-192x192.png",
