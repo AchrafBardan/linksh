@@ -30,14 +30,21 @@ class LinksController extends Controller
             'link' => 'url|required'
         ]);
 
-        $link = Str::random(10);
-        if(links::insert(['link'=>$link,'dest'=>$req->link])){
-            return view('mylink',[
-                'link' => $link
-            ]);
+        $link = Str::random(5);
+        if(links::create(['link'=>$link,'dest'=>$req->link,'ip'=>$req->ip()])){
+            return redirect()->route('mylink', ['link' => $link]);
         }
         else{
             dd('Failed');
         }
+    }
+    public function mylink(Request $req)
+    {
+        $links = links::where('ip',$req->ip())->orderBy('created_at', 'DESC')->get();
+        
+        return view('mylink',[
+            'links' => $links,
+            'req' => $req,
+        ]);
     }
 }

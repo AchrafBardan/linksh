@@ -14,6 +14,7 @@ class links extends Model
 protected $fillable = [
    'link',
    'dest',
+   'ip',
 ];
 
 

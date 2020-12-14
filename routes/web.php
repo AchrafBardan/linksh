@@ -15,9 +15,9 @@ use App\Http\Controllers\LinksController;
 */
 
 Route::view('/', 'index');
-
+Route::get('/mylink', [LinksController::class, 'mylink'])->name('mylink');
 Route::get('/{link}', [LinksController::class, 'visitlink'])->name('visitlink');
 Route::post('/new', [LinksController::class, 'newlink'])->name('newlink');
-Route::get('/mylink', [LinksController::class, 'mylink'])->name('mylink');
+
 
 
