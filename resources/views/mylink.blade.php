@@ -15,7 +15,7 @@
         <table class="flex flex-col">
             @foreach ($links as $link)
             <tr class="">
-                <th><a href="{{ $link->dest }}"><span class="font-light">https://bardan.nl/</span>{{ $link->link }}</a></th> 
+                <th><a href="https://bardan.nl/{{ $link->link }}"><span class="font-light">https://bardan.nl/</span>{{ $link->link }}</a></th> 
                 <th><a class="font-light" href="{{ $link->dest }}">{{ $link->dest }}</a></th>  
             </tr>
                 
