@@ -40,7 +40,7 @@ class LinksController extends Controller
     }
     public function mylink(Request $req)
     {
-        $links = links::where('ip',$req->ip())->orderBy('created_at', 'DESC')->get();
+        $links = links::where('ip',$req->ip())->orderBy('created_at', 'DESC')->paginate(10);
         
         return view('mylink',[
             'links' => $links,
