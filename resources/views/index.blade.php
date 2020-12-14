@@ -10,7 +10,7 @@
     <form action="{{ route('newlink') }}" method="post">
         @csrf
         <input name="link" type="text" placeholder="URL">
-        
+        <button type="submit">Maak link aan</button>
     </form>
 </body>
 </html>
