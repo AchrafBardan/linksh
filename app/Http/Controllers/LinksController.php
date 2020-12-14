@@ -12,16 +12,24 @@ class LinksController extends Controller
     {
         
         $dest = links::where('link',$req->link)->first();
-        if(!Str::contains($dest->dest, 'http://')){
-            $url = 'http://'.$dest->dest;
+        if(Str::contains($dest, ['http'])){
+            $url =  $dest->dest; 
         }
+            
+        
         else{
-            $url = $dest->dest;
+            
+            $url = 'http://'.$dest->dest;
+            
         }
         return redirect($url);
     }
     public function newlink(Request $req)
     {
+        $this->validate($req,[
+            'link' => 'url|required'
+        ]);
+
         $link = Str::random(10);
         if(links::insert(['link'=>$link,'dest'=>$req->link])){
             return view('mylink',[
