@@ -29,8 +29,14 @@ class LinksController extends Controller
         $this->validate($req,[
             'link' => 'url|required'
         ]);
-
-        $link = Str::random(5);
+        
+        if($req->linkname){
+            $link = $req->linkname;
+        }
+        else{
+            $link = Str::random(5);
+        }
+        
         if(links::create(['link'=>$link,'dest'=>$req->link,'ip'=>$req->ip()])){
             return redirect()->route('mylink', ['link' => $link]);
         }
