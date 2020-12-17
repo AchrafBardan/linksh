@@ -8,6 +8,7 @@
     </div>
     @endforeach
     @endif
+
     @if (session('status'))
         <div onclick="this.style.display = 'none';" class="font-medium text-red-500">
             {{ session('status') }} <i class="las la-times"></i>

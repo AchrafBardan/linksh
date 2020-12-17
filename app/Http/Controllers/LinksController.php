@@ -37,11 +37,6 @@ class LinksController extends Controller
             $link = Str::random(5);
         }
         
-        
-        if(!links::where('link',$link)->count() == 0){
-            return redirect()->back()->with(['status'=>'Link naam is al in gebruik']);
-        }
-
         if(links::create(['link'=>$link,'dest'=>$req->link,'ip'=>$req->ip()])){
             return redirect()->route('mylink', ['link' => $link]);
         }
