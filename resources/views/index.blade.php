@@ -13,7 +13,9 @@
             {{ session('status') }} <i class="las la-times"></i>
         </div>
     @endif
-    
+    <h1 class="text-center">Link Shortener 
+by Achraf 
+Bardan</h1>
     <form class="flex flex-col mb-4" action="{{ route('newlink') }}" method="post">
         @csrf
         <input class="w-60 mb-5 px-8 py-4 rounded-3xl border-indigo-200 border-b-4 placeholder-indigo-200 text-indigo-900 bg-indigo-300" value="https://" name="link" type="text" placeholder="Bv: https://google.com">
