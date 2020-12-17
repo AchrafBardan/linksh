@@ -8,7 +8,7 @@
     </div>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     <?php endif; ?>
-<<<<<<< HEAD
+
     <?php if(session('status')): ?>
         <div onclick="this.style.display = 'none';" class="font-medium text-red-500">
             <?php echo e(session('status')); ?> <i class="las la-times"></i>
@@ -17,9 +17,6 @@
     <h1 class="text-center">Link Shortener 
 by Achraf 
 Bardan</h1>
-=======
-    
->>>>>>> parent of 7cbd6b5... Check if custom field has already been used
     <form class="flex flex-col mb-4" action="<?php echo e(route('newlink')); ?>" method="post">
         <?php echo csrf_field(); ?>
         <input class="w-60 mb-5 px-8 py-4 rounded-3xl border-indigo-200 border-b-4 placeholder-indigo-200 text-indigo-900 bg-indigo-300" value="https://" name="link" type="text" placeholder="Bv: https://google.com">

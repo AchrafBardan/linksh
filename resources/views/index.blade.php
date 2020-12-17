@@ -15,7 +15,7 @@
         </div>
     @endif
     <h1 class="text-center">Link Shortener 
-by Achraf 
+by 
 Bardan</h1>
     <form class="flex flex-col mb-4" action="{{ route('newlink') }}" method="post">
         @csrf
